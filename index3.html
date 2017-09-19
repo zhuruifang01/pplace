@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>上海联通</title>
+    <link rel="stylesheet" href="css/double-date.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery-3.1.0.js"></script>
+    <script src="js/double-date.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/createcharts.js"></script>
+    <script src="js/index.js"></script>
+    <style>
+        html,body{
+            background-image:url("img/bg3.gif");
+            background-repeat:no-repeat;
+            background-size:100% 100%;
+        }
+    </style>
+</head>
+<body>
+   <div class="header header3"></div>
+   <div style="width:95%;height:30px;margin:0 auto;">
+       <a href="index.html" style="float:left;text-decoration:underline;color:#fff;">重点场景监控</a>
+       <a href="index4.html" style="float:right;text-decoration:underline;color:#fff;">容量预警监控</a>
+   </div>
+   <div class="contain contain3">
+       <div class="left" style="position:relative;">
+           <div style="border-radius:10px;width:96%;height:85%;position:absolute;left:0;right:0;top:8%;margin:auto;overflow:hidden;">
+               <iframe src="map/map1.html" frameborder="0" style="width:100%;height:100%;"></iframe>
+           </div>
+       </div>
+       <div class="right">
+           <div class="number">
+               <div class="num_left">
+                   <span style="color:#fdcd42;">告警数量：</span>
+                   <ul>
+                       <li>10</li>
+                       <li>20</li>
+                       <li>30</li>
+                   </ul>
+                   <ul class="wenzi">
+                       <li>KPI</li>
+                       <li>KQI</li>
+                       <li>告警</li>
+                   </ul>
+               </div>
+               <div class="num_right">
+                   <span style="color:#2adb3e;">解决数量：</span>
+                   <ul>
+                       <li>10</li>
+                       <li>20</li>
+                       <li>30</li>
+                   </ul>
+                   <ul class="wenzi">
+                       <li>KPI</li>
+                       <li>KQI</li>
+                       <li>告警</li>
+                   </ul>
+               </div>
+           </div>
+           <ul class="title" style="height:30px;margin-bottom:10px;margin-top:10px;">
+               <div class="outer clearfix">
+                   <div class="date date1 fl" id="from">
+                       <input type="text" class="date-check" placeholder="起始日期"/>
+                   </div>
+                   <div class="date fr" id="to">
+                       <input type="text" class="date-check" placeholder="结束日期"/>
+                   </div>
+                   <div class="date true">确定</div>
+                   <div class="date daochu">导出详表</div>
+               </div>
+           </ul>
+           <div class="con1">
+               <ul style="color:#45a9d5">
+                   <li>分区</li>
+                   <li>KPI</li>
+                   <li>KQI</li>
+                   <li>硬件故障数量</li>
+                   <li>容量</li>
+               </ul>
+               <div class="huadong_box">
+                   <div class="huadong">
+                       <ul>
+                           <li>东区</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                       </ul>
+                       <ul>
+                           <li>西区</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                       </ul>
+                       <ul>
+                           <li>南区</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                       </ul>
+                       <ul>
+                           <li>北区</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                       </ul>
+                       <ul>
+                           <li>专项</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                       </ul>
+                       <ul>
+                           <li>总计</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                       </ul>
+                       <ul>
+                           <li>东区</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                       </ul>
+                       <ul>
+                           <li>西区</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                       </ul>
+                       <ul>
+                           <li>南区</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                       </ul>
+                       <ul>
+                           <li>北区</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                       </ul>
+                       <ul>
+                           <li>专项</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                       </ul>
+                       <ul>
+                           <li>总计</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                       </ul>
+                       <ul>
+                           <li>东区</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                       </ul>
+                       <ul>
+                           <li>西区</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                       </ul>
+                       <ul>
+                           <li>南区</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                       </ul>
+                       <ul>
+                           <li>北区</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                       </ul>
+                       <ul>
+                           <li>专项</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                       </ul>
+                       <ul>
+                           <li>总计</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                           <li>XX</li>
+                       </ul>
+                   </div>
+               </div>
+
+           </div>
+           <ul>
+                   <li style="width:200px;height:30px;margin-right:10px;">
+                       <input type="text" placeholder="输入单号／小区" style="width:100%;height:100%;border-radius:6px;margin:0;padding:0;border:0; background:#d5d7df;padding-left:6px;">
+                   </li>
+                   <li class="true">确定</li>
+                   <li class="daochu">导出详情</li>
+           </ul>
+           <div class="con2">
+               <ul style="color:#45a9d5">
+                   <li>告警时间</li>
+                   <li>告警名</li>
+                   <li>告警类型</li>
+                   <li>告警内容</li>
+                   <li>是否解决</li>
+                   <li>解决时间</li>
+               </ul>
+               <div class="iscroll">
+                   <ul>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                   </ul>
+                   <ul>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                   </ul>
+                   <ul>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                   </ul>
+                   <ul>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                   </ul>
+                   <ul>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                   </ul>
+                   <ul>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                   </ul>
+                   <ul>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                   </ul>
+                   <ul>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                   </ul>
+                   <ul>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                   </ul>
+                   <ul>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                   </ul>
+                   <ul>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                   </ul>
+                   <ul>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                   </ul>
+                   <ul>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                   </ul>
+                   <ul>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                   </ul>
+                   <ul>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                   </ul>
+                   <ul>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                   </ul>
+                   <ul>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                   </ul>
+                   <ul>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                   </ul>
+                   <ul>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                   </ul>
+                   <ul>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                   </ul>
+                   <ul>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                       <li>XX</li>
+                   </ul>
+               </div>>
+               </div>
+           </div>
+       </div>
+   </div>
+</body>
+</html>

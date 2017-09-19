@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>上海联通</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery-3.1.0.js"></script>
+    <script src="js/jquery.select.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/createcharts.js"></script>
+    <script src="js/shanghai.js"></script>
+    <script src="js/index.js"></script>
+    <style>
+        html,body{
+            background-image:url("img/bg2.gif");
+            background-repeat:no-repeat;
+            background-size:100% 100%;
+        }
+    </style>
+</head>
+<body>
+   <div class="header header2"></div>
+   <div class="contain contain2">
+        <div class="top">
+             <div class="left" style="overflow:hidden">
+                 <div class="search">
+                     <div class="cjname" style="border-radius:6px;">{{ name }}</div>
+                     <a href="index.html" style="padding:3px 8px;margin-left:5px;background:#1f87d9;line-height:30px;text-align:center;color:#fff;border-radius:5px;">返回</a>
+                 </div>
+                 <div style="margin-left:15px;color:#fff;">良好栅格:145&nbsp;&nbsp;&nbsp;占比:84.83%;</div>
+				 <div id="map" style="width:95%;height:75%;margin:0 auto;margin-top:5px;position:relative;">
+                     <iframe src="map/map2.html" style="height:100%;width:100%;position:absolute;left:0;right:0;top:0;margin:auto;border-radius:5px;" frameborder="no" scrolling="no" ></iframe>
+                 </div>
+             </div>
+             <div class="right">
+                 <div class="topright1">
+                     <div id="chart4" style="width:100%;height:100%;"></div>
+                 </div>
+                 <div class="topright2" style="position:relative;">
+                     <div class="biaoge">
+                         <div  class="title">
+                             <ul>
+                                 <li>告警详单</li>
+                                 <li><a href="">导出详单</a></li>
+                             </ul>
+                         </div>
+                         <ul class="title2">
+                             <li>工单流水号</li>
+                             <li>告警类型</li>
+                             <li>问题小区</li>
+                             <li>触发原因</li>
+                             <li>首次触发</li>
+                             <li>最后触发</li>
+                         </ul>
+                         <div class="iscroll">
+                             <ul>
+                                 <li></li>
+                                 <li>KPI</li>
+                                 <li></li>
+                                 <li></li>
+                                 <li>2017.8.21 08:41:21</li>
+                                 <li>2017.8.21 08:41:21</li>
+                             </ul>
+                             <ul>
+                                 <li></li>
+                                 <li>KQI</li>
+                                 <li></li>
+                                 <li></li>
+                                 <li>2017.8.21 08:41:21</li>
+                                 <li>2017.8.21 08:41:21</li>
+                             </ul>
+                             <ul>
+                                 <li></li>
+                                 <li>告警</li>
+                                 <li></li>
+                                 <li></li>
+                                 <li>2017.8.21 08:41:21</li>
+                                 <li>2017.8.21 08:41:21</li>
+                             </ul>
+                             <ul>
+                                 <li></li>
+                                 <li>话务/流量突变</li>
+                                 <li></li>
+                                 <li></li>
+                                 <li>2017.8.21 08:41:21</li>
+                                 <li>2017.8.21 08:41:21</li>
+                             </ul>
+                             <ul>
+                                 <li></li>
+                                 <li>话务/流量突变</li>
+                                 <li></li>
+                                 <li></li>
+                                 <li>2017.8.21 08:41:21</li>
+                                 <li>2017.8.21 08:41:21</li>
+                             </ul>
+                             <ul>
+                                 <li></li>
+                                 <li>话务/流量突变</li>
+                                 <li></li>
+                                 <li></li>
+                                 <li>2017.8.21 08:41:21</li>
+                                 <li>2017.8.21 08:41:21</li>
+                             </ul>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+        </div>
+        <div class="bottom">
+            <div class="left" style="position:relative;">
+                    <div class="bottomrleft">
+                        <ul>
+                            <li>主控小区</li>
+                            <li>ECI</li>
+                            <li>采样点数量</li>
+                            <li>忙时业务量</li>
+                        </ul>
+                        <ul>
+                            <li>***</li>
+                            <li>***</li>
+                            <li>***</li>
+                            <li>***</li>
+                        </ul>
+                        <ul>
+                            <li>***</li>
+                            <li>***</li>
+                            <li>***</li>
+                            <li>***</li>
+                        </ul>
+                        <ul>
+                            <li>***</li>
+                            <li>***</li>
+                            <li>***</li>
+                            <li>***</li>
+                        </ul>
+                        <ul>
+                            <li>***</li>
+                            <li>***</li>
+                            <li>***</li>
+                            <li>***</li>
+                        </ul>
+                        <ul>
+                            <li>***</li>
+                            <li>***</li>
+                            <li>***</li>
+                            <li>***</li>
+                        </ul>
+                        <ul>
+                            <li>***</li>
+                            <li>***</li>
+                            <li>***</li>
+                            <li>***</li>
+                        </ul>
+                        <ul>
+                            <li>***</li>
+                            <li>***</li>
+                            <li>***</li>
+                            <li>***</li>
+                        </ul>
+                    </div>
+            </div>
+            <div class="center" style="position:relative;">
+                <ul class="button button4">
+                    <li class="active">接通率</li>
+                    <li>掉话率</li>
+                    <li style="width:100px;">PRB利用率</li>
+                </ul>
+                <div id="chart7" style="width:100%;height:100%;"></div>
+            </div>
+            <div class="right" style="position:relative">
+                    <ul class="button button2">
+                        <li class="active">下载速率</li>
+                        <li>TCP时延</li>
+                        <li>TCP丢包率</li>
+                        <li>终端RTT</li>
+                    </ul>
+                    <div id="chart5" style="width:100%;height:100%;"></div>
+            </div>
+        </div>
+   </div>
+</body>
+<!-- <script>
+
+    var myData = [
+        {name: 'aa', value: [121.15, 31.89, 200]},
+        {name: 'aa', value: [109.781327, 39.608266, 120]},
+        {name: 'aa', value: [120.38, 37.35, 142]},
+        {name: 'aa', value: [122.207216, 29.985295, 123]}
+    ];
+
+    $.get('js/shanghai.json', function (shanghaiJson) {
+
+        echarts.registerMap('shanghai', shanghaiJson); // 注册地图
+
+        var mapChart = echarts.init(document.getElementById('map2'));
+        option = {
+            backgroundColor: 'none',
+            title: {
+                text: '监控指标',
+                x:'center',
+                textStyle: {
+                    color: '#fff'
+                }
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: function (params) {
+                    return params.name + ' : ' + params.value[2];
+                }
+            },
+            legend: {
+                orient: 'vertical',
+                y: 'bottom',
+                x:'right',
+//                data:['pm2.5'],
+                textStyle: {
+                    color: '#fff'
+                }
+            },
+            visualMap: {
+                min: 0,
+                max: 200,
+                calculable: true,
+                inRange: {
+                    color: ['#50a3ba', '#eac736', '#d94e5d']
+                },
+                textStyle: {
+                    color: '#fff'
+                }
+            },
+            geo: {
+                map: 'shanghai',
+                label: {
+                    emphasis: {
+                        show: false
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        areaColor: '#323c48',
+                        borderColor: '#111'
+                    },
+                    emphasis: {
+                        areaColor: '#2a333d'
+                    }
+                }
+            },
+            series: [
+                {
+//                    name: '数据名称',
+//                              type: 'map',
+//                              mapType: '上海',
+//                              selectedMode : 'single',
+//                              itemStyle:{
+//                                  normal:{label:{show:true}},
+//                                  emphasis:{label:{show:true}}
+//                              },
+                    name: 'pm2.5',
+//                    type: 'custom',
+                    type: 'scatter',
+                    mapType: '上海',
+                    coordinateSystem: 'geo',
+                    data: myData,
+                    symbolSize: 12,
+                    label: {
+                        normal: {
+                            show: false
+                        },
+                        emphasis: {
+                            show: false
+                        }
+                    },
+                    itemStyle: {
+                        emphasis: {
+                            borderColor: '#fff',
+                            borderWidth: 1
+                        }
+                    }
+                }
+            ]
+        }
+        mapChart.setOption(option);
+    });
+
+</script> -->
+</html>

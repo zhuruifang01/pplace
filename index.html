@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>上海联通</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery-3.1.0.js"></script>
+    <script src="js/jquery.select.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/createcharts.js"></script>
+    <script src="js/index.js"></script>
+    <style>
+        html,body{
+            background-image:url("img/bg1.gif");
+            background-repeat:no-repeat;
+            background-size:100% 100%;
+        }
+        /*进度条*/
+        .progressbar:before {
+            width:440px;
+            left:10px;
+        }
+        .bar{left:10px;}
+    </style>
+</head>
+<body>
+   <div class="header"></div>
+   <a href="index3.html" style="text-decoration:underline;color:#fff;float:right;margin-right:40px;">告警工单监控</a>
+   <div class="contain">
+        <div class="top">
+             <div class="left" style="position:relative;overflow:hidden">
+                 <div class="search">
+                     <input id="testInput" type="text" value="请选择具体场景"/>
+                     <a href="index2.html" style=" width:60px;height:100%;padding:5px 5px;margin:0 0 0 5px;background:#1f87d9;
+				      line-height:30px;text-align:center;color:#fff;
+				      border-radius:5px;font-size:14px;">跳转</a>
+                 </div>
+                 <div id="map" style="width:95%;height:80%;border-radius:6px;overflow:hidden;position:absolute;left:0;right:0;margin:auto;top:60px;">
+                     <iframe src="map/map1.html" style="height:100%;width:100%;" frameborder="no" scrolling="no" ></iframe>
+                 </div>
+             </div>
+             <div class="right">
+                 <div class="topright1" style="height:40%;margin-top:20px;">
+                     <div class="one">
+                         <div style="width:20%;height:30px;font-size:16px;line-height:40px;text-align:right;color:#7bd22a;float:left;margin-top:10px;">整体达标率:</div>
+                         <div style="width:63%;float:left;margin:0;margin-top:10px;margin-left:5px;" class="progressbar" data-perc="50">
+
+                             <div class="bar"><span></span></div>
+
+                             <div class="label"><span></span></div>
+                         </div>
+                         <div style="font-size:16px;line-height:40px;color:#7bd22a;float:left;margin-top:10px;margin-left:8px;">10000</div>
+                     </div>
+                     <div class="two">
+                         <div style="width:20%;height:30px;font-size:16px;line-height:40px;text-align:right;color:yellow;float:left;margin-top:10px;">整体对标领先率:</div>
+                         <div style="width:63%;float:left;margin:0;margin-top:10px;margin-left:5px;" class="progressbar" data-perc="70">
+
+                             <div class="bar color2"><span></span></div>
+
+                             <div class="label"><span></span></div>
+                         </div>
+                         <div style="font-size:16px;line-height:40px;color:yellow;float:left;margin-top:10px;margin-left:8px;">20000</div>
+                     </div>
+                     <div class="three">
+                         <div style="width:20%;height:30px;font-size:16px;line-height:40px;text-align:right;color:#d8124d;float:left;margin-top:10px;">业务占比:</div>
+                         <div style="width:63%;float:left;margin:0;margin-top:10px;margin-left:5px;" class="progressbar" data-perc="80">
+
+                             <div class="bar color3"><span></span></div>
+
+                             <div class="label"><span></span></div>
+                         </div>
+                         <div style="font-size:16px;line-height:40px;color:#d8124d;float:left;margin-top:10px;margin-left:8px;">30000</div>
+                     </div>
+                 </div>
+                 <div class="topright2">
+                     <div id="chart1" style="width:100%;height:100%;"></div>
+                 </div>
+             </div>
+        </div>
+        <div class="bottom">
+            <div class="left">
+                <div id="chart2" style="width:100%;height:100%;"></div>
+            </div>
+            <div class="center">
+                <ul class="button button1">
+                    <li class="active">接通率</li>
+                    <li>掉话率</li>
+                    <li>流量</li>
+                </ul>
+                <div id="chart3" style="width:100%;height:100%;"></div>
+            </div>
+            <div class="right" style="position:relative">
+                <div class="bottomright">
+                    <ul>
+                        <li>类型</li>
+                        <li>数值</li>
+                        <li>操作</li>
+                    </ul>
+                    <ul>
+                        <li>KPI:</li>
+                        <li>12</li>
+                        <li><a href="">下载</a></li>
+                    </ul>
+                    <ul>
+                        <li>KQI:</li>
+                        <li>12</li>
+                        <li><a href="">下载</a></li>
+                    </ul>
+                    <ul>
+                        <li>告警:</li>
+                        <li>12</li>
+                        <li><a href="">下载</a></li>
+                    </ul>
+                    <ul>
+                        <li>容量个数:</li>
+                        <li>18</li>
+                        <li><a href="">下载</a></li>
+                    </ul>
+                    <ul>
+                        <li>点击数字:</li>
+                        <li>18</li>
+                        <li><a href="">下载</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div> 
+   </div>
+</body>
+<script type="text/javascript">
+
+    $(function() {
+
+
+
+        $('.progressbar').each(function(){
+
+            var t = $(this),
+
+                dataperc = t.attr('data-perc'),
+
+                barperc = Math.round(dataperc*4.4);
+
+            t.find('.bar').animate({width:barperc}, dataperc*25);
+
+            t.find('.label').append('<div class="perc"></div>');
+
+
+
+            function perc(){
+
+                var length = t.find('.bar').css('width'),
+
+                    perc = Math.round(parseInt(length)/4.4),
+
+                    labelpos = (parseInt(length)-2);
+
+                t.find('.label').css('left', labelpos);
+
+                t.find('.perc').text(perc+'%');
+
+            }
+
+            perc();
+
+            setInterval(perc, 0);
+
+        });
+
+
+
+    });
+
+</script>
+</html>
