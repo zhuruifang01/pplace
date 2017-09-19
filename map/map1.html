@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+  <title></title>
+	<style type="text/css">
+  body, html,#map_demo, #tab, #mapfrm {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+  #menu{height:100%;overflow-y:auto}
+  td{font-size:14px}
+  h4{margin:0;}
+  #map_demo1,#map_demo2{height: 50%}
+  .anchorBL{display:none;}
+  </style>
+  <script type="text/javascript" src="js/baidumap_offline_v2_load.js"></script>
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/layer/layer.js"></script>
+  <!--<link rel="stylesheet" type="text/css" href="../../baidumapv2/css/baidu_map_v2.css"/>-->
+</head>
+<body>
+<div id="map_demo">1</div>
+</body>
+</html>
+<script type="text/javascript">
+// 百度地图API功能
+	var map = new BMap.Map("map_demo");
+    function map1(lng,lat,name){
+		var point = new BMap.Point(lng,lat);
+		map.centerAndZoom(point,10);
+        var marker = new BMap.Marker(point);  // 创建标注
+		map.addOverlay(marker);              // 将标注添加到地图中
+		marker.addEventListener("click",getAttr);
+		function getAttr(){
+			var p = marker.getPosition();       //获取marker的位置
+			layer.msg("问题场景："+name+"(" + p.lng + "," + p.lat+'）');
+		}
+	}
+	// ajax{
+	// 	for(data){
+	// 		map1(121.479159,31.239115,"徐家汇");
+	// 	}
+	// }
+	// for(){}
+	map1(121.479159,31.239115,"徐家汇");
+</script>

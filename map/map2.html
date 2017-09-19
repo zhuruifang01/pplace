@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+  <title>百度地图离线API V2.0  www.xiaoguo123.com</title>
+	<style type="text/css">
+  body, html,#map_demo, #tab, #mapfrm {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+  #menu{height:100%;overflow-y:auto}
+  td{font-size:14px}
+  h4{margin:0;}
+  #map_demo1,#map_demo2{height: 50%}
+  .anchorBL{display:none;}
+  </style>
+  <script type="text/javascript" src="js/baidumap_offline_v2_load.js"></script>
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/layer/layer.js"></script>
+  <script type="text/javascript" src="js/shangge.js"></script>
+</head>
+<body>
+<div id="map_demo">1</div>
+</body>
+</html>
+<script type="text/javascript">
+// 百度地图API功能
+	var map = new BMap.Map("map_demo",{maxZoom:16});
+    //var point = new BMap.Point(121.49735, 30.83085);
+	var point = new BMap.Point(data.data1[0][0], data.data1[0][1]);  //地图中心点
+
+	map.centerAndZoom(point,15);
+	map.enableScrollWheelZoom();                        //启用滚轮放大缩小
+var var_great=data.data1.length;   //良好栅格
+var var_worse=data.data2.length;   //问题栅格
+var var_sum=var_great+var_worse;
+var bili=(var_great/var_sum*100).toFixed(2);
+layer.msg( '共绘制'+var_sum+'个栅格:'+'良好占'+bili+'%' );
+
+if (document.createElement('canvas').getContext) {  // 判断当前浏览器是否支持绘制海量点
+    //良好栅格：
+    var points1 = [];  // 添加海量点数据
+    for (var i = 0; i < data.data1.length; i++) {
+        points1.push(new BMap.Point(data.data1[i][0], data.data1[i][1]));
+    }
+    var options1 = {
+        size:BMAP_POINT_SIZE_NORMAL,
+        shape:BMAP_POINT_SHAPE_RHOMBUS,
+        color: '#59b5f0'
+    }
+    var pointCollection1 = new BMap.PointCollection(points1, options1);  // 初始化PointCollection
+    pointCollection1.addEventListener('click', function (e) {
+        alert('良好栅格:[' + e.point.lng + ',' + e.point.lat+']');  // 监听点击事件
+    });
+    map.addOverlay(pointCollection1);  // 添加Overlay
+
+    // 问题栅格
+    var points2 = [];  // 添加海量点数据
+    for (var i = 0; i < data.data2.length; i++) {
+        points2.push(new BMap.Point(data.data2[i][0], data.data2[i][1]));
+    }
+    var options2 = {
+        size:BMAP_POINT_SIZE_NORMAL,
+        shape: BMAP_POINT_SHAPE_RHOMBUS,
+        color: 'red'
+    }
+    var pointCollection2 = new BMap.PointCollection(points2, options2);  // 初始化PointCollection
+    pointCollection2.addEventListener('click', function (e) {
+        alert('问题栅格:[' + e.point.lng + ',' + e.point.lat+']');  // 监听点击事件
+    });
+    map.addOverlay(pointCollection2);  // 添加Overlay
+
+} else {
+    alert('请在chrome、safari、IE8+以上浏览器查看本示例');
+}
+
+
+
+</script>
